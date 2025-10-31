@@ -93,8 +93,8 @@ export default function HomePage() {
         <div className="wide-layout grid grid-cols-1 lg:grid-cols-12 gap-2 items-stretch pb-12">
           
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_1/CoMe.png"
+              rightSrc="/images/compare_1/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -104,8 +104,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_2/CoMe.png"
+              rightSrc="/images/compare_2/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -115,8 +115,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_3/CoMe.png"
+              rightSrc="/images/compare_3/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -126,8 +126,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_4/CoMe.png"
+              rightSrc="/images/compare_4/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -137,8 +137,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_5/CoMe.png"
+              rightSrc="/images/compare_5/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -148,8 +148,41 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_1/CoMe-VGGT.png"
-              rightSrc="/images/compare_1/Orig-VGGT.png"
+              leftSrc="/images/compare_6/CoMe.png"
+              rightSrc="/images/compare_6/VGGT.png"
+              leftAlt="Before"
+              rightAlt="After"
+              initial={0.5}
+              leftLabel="Original VGGT"
+              rightLabel="Co-Me Accelerated"
+              // You can enforce aspect ratio if desired:
+              className="aspect-[4/3]"
+          />
+          <ImageCompare
+              leftSrc="/images/compare_7/CoMe.png"
+              rightSrc="/images/compare_7/VGGT.png"
+              leftAlt="Before"
+              rightAlt="After"
+              initial={0.5}
+              leftLabel="Original VGGT"
+              rightLabel="Co-Me Accelerated"
+              // You can enforce aspect ratio if desired:
+              className="aspect-[4/3]"
+          />
+          <ImageCompare
+              leftSrc="/images/compare_8/CoMe.png"
+              rightSrc="/images/compare_8/VGGT.png"
+              leftAlt="Before"
+              rightAlt="After"
+              initial={0.5}
+              leftLabel="Original VGGT"
+              rightLabel="Co-Me Accelerated"
+              // You can enforce aspect ratio if desired:
+              className="aspect-[4/3]"
+          />
+          <ImageCompare
+              leftSrc="/images/compare_9/CoMe.png"
+              rightSrc="/images/compare_9/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}

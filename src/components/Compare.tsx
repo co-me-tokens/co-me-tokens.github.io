@@ -134,7 +134,7 @@ export default function ImageCompare({
         </div>
       )}
       {rightLabel && (
-        <div className="absolute right-2 top-2 text-xs font-medium px-1.5 py-0.5 rounded bg-black/60 text-white">
+        <div className="absolute right-2 top-2 text-xs font-medium px-1.5 py-0.5 rounded bg-black/60 text-primary-400">
           {rightLabel}
         </div>
       )}
