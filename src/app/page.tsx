@@ -60,8 +60,8 @@ export default function HomePage() {
         </div>
         <div className={clsx("absolute w-auto min-w-full min-h-full max-w-none z-10", maskColor)} />
         <div className="absolute bottom-4 left-4 z-20">
-          <p><span className='align-super text-sm'>1</span>Carnegie Mellon University</p>
-          <p><span className='align-super text-sm'>2</span>Field AI</p>
+          <p className='mb-2'><span className='align-super text-sm'>1</span><img src='/images/cmu.png' className="h-8 inline-block ml-2"/></p>
+          <p className='mb-2'><span className='align-super text-sm'>2</span><img src='/images/fieldai.png' className="h-6 inline-block ml-2"/></p>
         </div>
         <video
           autoPlay
@@ -81,7 +81,10 @@ export default function HomePage() {
         <div className='layout py-12'>
           <h2 className='text-center pb-4'>Abstract</h2>
           <p className='text-pretty'>
-            TO BE FILLED HERE.
+            We propose <b>Confidence-Guided Token Merging</b> (Co-Me), a training-free acceleration mechanism for visual geometric transformers. 
+            Co-Me employs a distilled confidence predictor to rank tokens and selectively merge low-confidence ones, effectively reducing computation while maintaining spatial coverage.
+            Unlike similarity-based merging or pruning, the confidence signal in Co-Me reliably indicates regions emphasized by the transformer, enabling substantial acceleration without degrading performance.
+            Co-Me applies seamlessly to various multi-view and streaming visual geometric transformers, achieving speedups that scale with sequence length and reaching up to <KatexSpan text="$11.3\times$" />, making visual geometric transformers practical for real-time applications.
           </p>
         </div>
       </section>
