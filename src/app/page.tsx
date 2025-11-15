@@ -16,12 +16,12 @@ export default function HomePage() {
   // const [mode, toggleMode] = useDarkMode();
   const textColor = 'text-gray-600';
   const bgColor = 'bg-white';
-  const maskColor = 'bg-white/50';
+  const maskColor = 'bg-stone-300/70';
   const secondaryBgColor = 'bg-gray-100';
   const hlTextColor = "text-primary-600";
   const hl2TextColor = "text-red-700";
   const hlBgColor = "bg-primary-600";
-
+  const linkIconClass = 'h-6 w-6 shrink-0';
   const citation_bibtex = `put your bibTex here.`;
 
   return (
@@ -44,17 +44,33 @@ export default function HomePage() {
             <span className='text-lg'>
               <UnderlineLink href="https://www.yutianchen.blog/">Yutian Chen</UnderlineLink><span className="align-super text-sm">1,2</span>, &nbsp;
               <UnderlineLink href="https://haleqiu.github.io/">Yuheng Qiu</UnderlineLink><span className="align-super text-sm">1</span>, &nbsp;
-              Ruogu Li<span className="align-super text-sm">1</span>, &nbsp;
+              Ruogu Li<span className="align-super text-sm">1</span>, <br/>
+              <UnderlineLink href="https://aliagha.site/">Ali Agha</UnderlineLink><span className="align-super text-sm">2</span>, &nbsp;
+              <UnderlineLink href="https://scholar.google.com/citations?user=nm5wMNUAAAAJ&hl=en">Shayegan Omidshafiei</UnderlineLink><span className="align-super text-sm">2</span>, &nbsp;
               <UnderlineLink href="https://www.jaypatrikar.me">Jay Patrikar</UnderlineLink><span className="align-super text-sm">2</span>, &nbsp;
               <UnderlineLink href="https://www.ri.cmu.edu/ri-faculty/sebastian-scherer/">Sebastian Scherer</UnderlineLink><span className="align-super text-sm">1,2</span>
             </span>
           </div>
           <div className="container flex flex-row items-center space-x-8 justify-center text-lg">
-            <ArrowLink className='mt-6' href='https://github.com/co-me-tokens/CoMe' variant="light" size='large'>
-              GitHub Repo
-            </ArrowLink>
-            <ArrowLink className='mt-6' href='https://arxiv.org/abs/2409.09479' variant="light" size='large'>
+            <ArrowLink className='mt-6' href='https://arxiv.org/abs/2409.09479' variant="light" size='large' icon={
+                <img
+                  src='/svg/arxiv.svg'
+                  alt='arXiv logo'
+                  className={linkIconClass}
+                  loading='lazy'
+                />
+            }>
               arXiv Page
+            </ArrowLink>
+            <ArrowLink className='mt-6' href='https://github.com/co-me-tokens/CoMe' variant="light" size='large' icon={
+              <img
+                  src='/svg/github.svg'
+                  alt='GitHub logo'
+                  className={linkIconClass}
+                  loading='lazy'
+                />
+            }>
+              GitHub Repo
             </ArrowLink>
           </div>
         </div>
@@ -67,10 +83,10 @@ export default function HomePage() {
           autoPlay
           loop
           muted
-          className="absolute w-auto min-w-full min-h-full max-w-none z-0"
+          className="absolute inset-0 w-full h-full z-0 object-cover object-top"
         >
           <source
-            src="/video/hero_come_method.mp4"
+            src="/video/Co-Me-Method.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -81,10 +97,11 @@ export default function HomePage() {
         <div className='layout py-12'>
           <h2 className='text-center pb-4'>Abstract</h2>
           <p className='text-pretty'>
-            We propose <b>Confidence-Guided Token Merging</b> (Co-Me), a training-free acceleration mechanism for visual geometric transformers. 
-            Co-Me employs a distilled confidence predictor to rank tokens and selectively merge low-confidence ones, effectively reducing computation while maintaining spatial coverage.
-            Unlike similarity-based merging or pruning, the confidence signal in Co-Me reliably indicates regions emphasized by the transformer, enabling substantial acceleration without degrading performance.
-            Co-Me applies seamlessly to various multi-view and streaming visual geometric transformers, achieving speedups that scale with sequence length and reaching up to <KatexSpan text="$11.3\times$" />, making visual geometric transformers practical for real-time applications.
+            We propose Confidence-Guided Token Merging (Co-Me), an acceleration mechanism for visual geometric transformers without retraining or finetuning the base model.
+            Co-Me employs a light-weight distilled confidence predictor to rank tokens and selectively merge low-confidence ones, effectively reducing computation while maintaining spatial coverage.
+            Compared to similarity-based merging or pruning, the confidence signal in Co-Me reliably indicates regions emphasized by the transformer, enabling substantial acceleration without degrading performance.
+            Co-Me applies seamlessly to various multi-view and streaming visual geometric transformers, achieving speedups that scale with sequence length.
+            When applied to VGGT and MapAnything, Co-Me achieves up to <KatexSpan text="$11.5\times$"/> and <KatexSpan text="$7.2\times$"/>  speedup, making visual geometric transformers practical for real-time 3D perception and reconstruction. 
           </p>
         </div>
       </section>
@@ -107,8 +124,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_2/CoMe.png"
-              rightSrc="/images/compare_2/VGGT.png"
+              leftSrc="/images/compare_9/CoMe.png"
+              rightSrc="/images/compare_9/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -118,19 +135,8 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_3/CoMe.png"
-              rightSrc="/images/compare_3/VGGT.png"
-              leftAlt="Before"
-              rightAlt="After"
-              initial={0.5}
-              leftLabel="Original VGGT"
-              rightLabel="Co-Me Accelerated"
-              // You can enforce aspect ratio if desired:
-              className="aspect-[4/3]"
-          />
-          <ImageCompare
-              leftSrc="/images/compare_4/CoMe.png"
-              rightSrc="/images/compare_4/VGGT.png"
+              leftSrc="/images/compare_6/CoMe.png"
+              rightSrc="/images/compare_6/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -151,8 +157,31 @@ export default function HomePage() {
               className="aspect-[4/3]"
           />
           <ImageCompare
-              leftSrc="/images/compare_6/CoMe.png"
-              rightSrc="/images/compare_6/VGGT.png"
+              leftSrc="/images/compare_2/CoMe.png"
+              rightSrc="/images/compare_2/VGGT.png"
+              leftAlt="Before"
+              rightAlt="After"
+              initial={0.5}
+              leftLabel="Original VGGT"
+              rightLabel="Co-Me Accelerated"
+              // You can enforce aspect ratio if desired:
+              className="aspect-[4/3]"
+          />
+          <ImageCompare
+              leftSrc="/images/compare_4/CoMe.png"
+              rightSrc="/images/compare_4/VGGT.png"
+              leftAlt="Before"
+              rightAlt="After"
+              initial={0.5}
+              leftLabel="Original VGGT"
+              rightLabel="Co-Me Accelerated"
+              // You can enforce aspect ratio if desired:
+              className="aspect-[4/3]"
+          />
+
+          {/* <ImageCompare
+              leftSrc="/images/compare_3/CoMe.png"
+              rightSrc="/images/compare_3/VGGT.png"
               leftAlt="Before"
               rightAlt="After"
               initial={0.5}
@@ -182,18 +211,7 @@ export default function HomePage() {
               rightLabel="Co-Me Accelerated"
               // You can enforce aspect ratio if desired:
               className="aspect-[4/3]"
-          />
-          <ImageCompare
-              leftSrc="/images/compare_9/CoMe.png"
-              rightSrc="/images/compare_9/VGGT.png"
-              leftAlt="Before"
-              rightAlt="After"
-              initial={0.5}
-              leftLabel="Original VGGT"
-              rightLabel="Co-Me Accelerated"
-              // You can enforce aspect ratio if desired:
-              className="aspect-[4/3]"
-          />
+          /> */}
         </div>
       </section>
 
@@ -211,7 +229,11 @@ export default function HomePage() {
             img_src="/images/CoMe-Details.png"
             caption={
               <span>
-                The proposed mask, index mapping (left), merge (middle), and split (right) operators. Each sample generates a merge mask and index map via confidence ranking and bottom-<KatexSpan text="$p$" /> selection, followed by an exclusive scan for re-indexing. The index map is shared by merging and splitting operation, which aggregate (average or copy) and restore image tokens while preserving special tokens. Bottom-<KatexSpan text="$p$" /> masking guarantees consistent token counts for efficient batched processing.
+                {/* The proposed mask, index mapping (left), merge (middle), and split (right) operators. Each sample generates a merge mask and index map via confidence ranking and bottom-<KatexSpan text="$p$" /> selection, followed by an exclusive scan for re-indexing. The index map is shared by merging and splitting operation, which aggregate (average or copy) and restore image tokens while preserving special tokens. Bottom-<KatexSpan text="$p$" /> masking guarantees consistent token counts for efficient batched processing. */}
+                The proposed mask generation (left), merge (middle), and split (right) operators. Each sample generates an individual merge
+                mask via confidence ranking and bottom-<KatexSpan text="$p$"/> selection. A shared index map is used by merging and splitting, which aggregate (average
+                or copy) and restore image tokens while preserving special tokens. Our efficient implementation supports varying merging masks across
+                samples in the batch as long as the number of merged tokens remains consistent.
               </span>
             }
             isDark={false}
