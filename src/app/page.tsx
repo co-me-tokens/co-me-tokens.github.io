@@ -22,7 +22,15 @@ export default function HomePage() {
   const hl2TextColor = "text-red-700";
   const hlBgColor = "bg-primary-600";
   const linkIconClass = 'h-6 w-6 shrink-0';
-  const citation_bibtex = `put your bibTex here.`;
+  const citation_bibtex = `@misc{chen2025comeconfidenceguidedtokenmerging,
+      title={Co-Me: Confidence-Guided Token Merging for Visual Geometric Transformers}, 
+      author={Yutian Chen and Yuheng Qiu and Ruogu Li and Ali Agha and Shayegan Omidshafiei and Jay Patrikar and Sebastian Scherer},
+      year={2025},
+      eprint={2511.14751},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.14751}, 
+}`;
   const sliderItems: { title: string; content: React.ReactNode }[] = [
     {
       title: 'Motivation',
@@ -33,7 +41,7 @@ export default function HomePage() {
             className="rounded-md mx-auto shadow-sm w-full"
           >
             <source
-              src="/video/CoMe-Intro-v4.mp4"
+              src="/video/CoMe-Intro-v5.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -169,7 +177,7 @@ export default function HomePage() {
             Co-Me employs a light-weight distilled confidence predictor to rank tokens and selectively merge low-confidence ones, effectively reducing computation while maintaining spatial coverage.
             Compared to similarity-based merging or pruning, the confidence signal in Co-Me reliably indicates regions emphasized by the transformer, enabling substantial acceleration without degrading performance.
             Co-Me applies seamlessly to various multi-view and streaming visual geometric transformers, achieving speedups that scale with sequence length.
-            When applied to VGGT and MapAnything, Co-Me achieves up to <KatexSpan text="$11.5\times$" /> and <KatexSpan text="$7.2\times$" />  speedup, making visual geometric transformers practical for real-time 3D perception and reconstruction.
+            When applied to VGGT and MapAnything, Co-Me achieves up to <KatexSpan text="$11.3\times$" /> and <KatexSpan text="$7.2\times$" />  speedup, making visual geometric transformers practical for real-time 3D perception and reconstruction.
           </p>
           {/* <img
             src='/svg/Lineplot.svg'
@@ -328,14 +336,14 @@ export default function HomePage() {
           <div className='pb-16' />
         </div>
       </section>
-      {/* <section className={clsx(secondaryBgColor, textColor)}>
+      <section className={clsx(secondaryBgColor, textColor)}>
         <div className='layout pt-4 pb-48'>
           <h2 className='mt-12 mb-4'>Citation</h2>
           <pre className='ml-12'>
             {citation_bibtex}
           </pre>
         </div>
-      </section> */}
+      </section>
     </main >
   );
 }
