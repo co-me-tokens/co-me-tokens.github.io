@@ -120,7 +120,7 @@ export default function HomePage() {
             </span>
           </div>
           <div className="container flex flex-row items-center space-x-8 justify-center text-lg">
-            <ArrowLink className='mt-6' href='https://arxiv.org/abs/2409.09479' variant="light" size='large' icon={
+            <ArrowLink className='mt-6' href='https://arxiv.org/abs/2511.14751' variant="light" size='large' icon={
               <img
                 src='/svg/arxiv.svg'
                 alt='arXiv logo'
