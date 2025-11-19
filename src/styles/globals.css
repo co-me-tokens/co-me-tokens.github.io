@@ -98,6 +98,22 @@
 }
 
 @layer utilities {
+  .scrollbar-dark {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.35) #222222;
+  }
+  .scrollbar-dark::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+  .scrollbar-dark::-webkit-scrollbar-track {
+    background: #222222;
+  }
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+    border: 2px solid #222222;
+  }
+
   .animated-underline {
     background-image: linear-gradient(#33333300, #33333300),
       linear-gradient(

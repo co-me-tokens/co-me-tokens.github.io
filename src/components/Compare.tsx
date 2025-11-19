@@ -75,7 +75,7 @@ export default function ImageCompare({
     <div
       ref={containerRef}
       className={[
-        'relative overflow-hidden select-none touch-none col-span-4',
+        'relative overflow-hidden select-none touch-none',
         'rounded-xl shadow ring-1 ring-black/5 bg-black/5',
         className,
       ].join(' ')}
